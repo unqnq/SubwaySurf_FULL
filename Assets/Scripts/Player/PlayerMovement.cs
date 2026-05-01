@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool canMove = true;
     [SerializeField] private Transform playerTransform;
     [SerializeField] float coef = 2;
     void Start()
@@ -11,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(0) && canMove)
         {
             MovePlayer();
         }
